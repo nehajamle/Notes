@@ -27,25 +27,3 @@ export class TestService
     return this.http.put<any>(`${this.apiUrl}/${id}`, { id, content });
   }
 }
-  /* addNote(content: string): Observable<any> {
-    return this.http.post<any>(this.apiUrl, { content: content });
-  } 
- 
-  delete(id:any):Observable<any>
-  {
-    return this.http.delete<any>(this.apiUrl+'/NotesData/'+id);
-  } */
-
- /* 
-  delete(id: number): Observable<any> {
-    return this.http.delete<any>(`${this.apiUrl}/${id}`);
-  } */
-/* updateData(val:any)
-  {
-    return this.http.put(this.ApiUrl+'/library', val);
-  }
-  //DELETE
-  deleteData(val:any)
-  {
-    return this.http.delete(this.ApiUrl+'/library/'+val);
-  } */
