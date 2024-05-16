@@ -1,0 +1,30 @@
+.header-container {
+    display: flex;
+    justify-content: space-between; /* Align items with space between */
+    align-items: center;
+    background-color: #645f5f;
+    color: #0a0a0a;
+  }
+  
+  .title-container {
+    flex-grow: 1; /* Allow the title container to grow */
+  }
+  
+  .button-container {
+    margin-left: auto; /* Push the button to the right */
+  }
+  
+  footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #645f5f;
+    color: #fff;
+    padding: 20px 0;
+  }
+  
+  footer .container {
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: center;
+  }

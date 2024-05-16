@@ -1,0 +1,42 @@
+<div class="d-flex justify-content-center align-items-center">
+  <div class="text-center">
+    <div class="form-floating">
+      <textarea class="form-control custom-textarea" 
+        [(ngModel)]="newNoteContent"
+        placeholder="Leave a comment here" id="floatingTextarea2">
+      </textarea>
+      <label for="floatingTextarea2">Add Something..!!</label>
+    </div>
+    <button (click)="addNote()" type="button" class="btn btn-primary">
+      Add Note
+    </button>
+    <hr>
+
+    <div *ngFor="let note of notes">
+      <table style="height: auto; width: 500px;">
+        <tr>
+          <td>
+            <input type="checkbox" (change)="toggleStrikeThrough($event, note)">
+          </td>
+          <td>
+            <!-- Change to textarea for editing -->
+            <textarea class="form-control" *ngIf="note.isEditing" [(ngModel)]="note.updatedContent"></textarea>
+            <p *ngIf="!note.isEditing" [style.textDecoration]="note.checked ? 'line-through' : 'none'">{{ note.Content }}</p>
+          </td>
+          <td style="width: 200px;">
+            <!-- Toggle display of buttons based on editing state -->
+            <button *ngIf="!note.isEditing" (click)="editNoteStart(note)">Edit</button>
+            <button *ngIf="note.isEditing" (click)="saveEditedNote(note)">Save</button>
+            <button *ngIf="note.isEditing" (click)="cancelEdit(note)">Cancel</button>
+            <button (click)="deleteNote(note)">Delete</button>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3">
+            <hr>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
